@@ -15,7 +15,7 @@ function Home() {
 
     const [data,setData]=useState([]);
 
-  
+   
 
     const handleSubmit = (event) =>{
         // alert('Form Submitted Successfully');
@@ -31,17 +31,17 @@ function Home() {
 
     
     useEffect(()=>{
-        axios.get('https://emp-task-tm7l.onrender.com')
+        axios.get('https://emp-task-tm7l.onrender.com/')
         .then(res => setData(res.data))
         .catch(err => console.log(err));
 
 })
     const handleDelete=(Eid)=>{
-        axios.delete('https://emp-task-tm7l.onrender.com'+Eid)
+        axios.delete('https://emp-task-tm7l.onrender.com/'+Eid)
         .then(res => {navigate('/')})
         .catch(err => console.log(err));
     }
-   
+    
   return (
     <div>
         <div className='form-container'>
