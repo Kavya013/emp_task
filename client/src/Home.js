@@ -15,21 +15,7 @@ function Home() {
 
     const [data,setData]=useState([]);
 
-    // const fetchdata=async()=>{
-            
-    //     try{
-    //     const response=await axios.get('http://localhost:8081/');
-    //     console.log(response.data);
-    //     if(response.status===200){
-    //         setData(response.data);
-    //     }else{
-    //         throw new Error('Something went wrong');
-    //     }
-    // }catch(err){
-    //     console.log(err);   
-    // }  
-
-    // } state management in navigation
+  
 
     const handleSubmit = (event) =>{
         // alert('Form Submitted Successfully');
@@ -45,19 +31,17 @@ function Home() {
 
     
     useEffect(()=>{
-        axios.get('http://localhost:8081/')
+        axios.get('https://emp-task-tm7l.onrender.com')
         .then(res => setData(res.data))
         .catch(err => console.log(err));
 
 })
     const handleDelete=(Eid)=>{
-        axios.delete('http://localhost:8081/'+Eid)
+        axios.delete('https://emp-task-tm7l.onrender.com'+Eid)
         .then(res => {navigate('/')})
         .catch(err => console.log(err));
     }
-    // const handleNextpage=()=>{
-    //     navigate('/Homenew',{Ename,Eid,Edept,Edob,Egender,Edesign,Esalary});
-    // }
+   
   return (
     <div>
         <div className='form-container'>

@@ -20,7 +20,7 @@ app.get('/',(req,res)=>{
         return res.status(200).json(data);
     })
 })
-// ipo poi add pannu
+
 app.post('/Homenew', (req, res) => {
     console.log("postdata");  
     console.log("req-post:", req.body);  
@@ -48,7 +48,7 @@ app.post('/Homenew', (req, res) => {
         }
         console.log("created");
     });
-    res.status(200).send({message:"created"}); //Done
+    res.status(200).send({message:"created"}); 
 });
 
   

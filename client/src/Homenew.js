@@ -14,12 +14,12 @@ const Homenew = () => {
     const [Eage, setEage] = useState('')
     const navigate=useNavigate();
 
-    // const [data,setData]=useState([]); submit click panitu console la paaru
+   
     const handleSubmit = (event) =>{
         alert('Form Submitted Successfully');
         console.log(Eaddress,Elocation,Epincode,Eexperience,Eage,Ename,Eid,Edept,Edob,Egender,Edesign,Esalary);
         event.preventDefault();
-        axios.post('http://localhost:8081/Homenew',{Ename,Eid,Edept,Edob,Egender,Edesign,Esalary,Eaddress,Elocation,Epincode,Eexperience,Eage})
+        axios.post('https://emp-task-tm7l.onrender.com',{Ename,Eid,Edept,Edob,Egender,Edesign,Esalary,Eaddress,Elocation,Epincode,Eexperience,Eage})
         .then(res =>{
             navigate('/');
         })
