@@ -41,6 +41,7 @@ app.post('/Homenew', (req, res) => {
         req.body.Eage,
     ];
     console.log("completed");
+    console.log(values);
 
     db.query(sql, values, (err, data) => {
         if (err) {
