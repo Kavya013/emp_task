@@ -115,13 +115,7 @@ function Home() {
                     </div>
                 </form>
             </div>
-            <input
-                type="text"
-                placeholder="Search by name, ID, department, DOB, gender, designation, salary..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-            />
-            <button onClick={handleSearch}>Search</button>
+           
             <div className='table-container'>
                 <div className='main'>
                     <h1> Employee Details</h1>
