@@ -15,6 +15,7 @@ function Home() {
     const [filteredData, setFilteredData] = useState([]);
     const navigate = useNavigate();
     const [data, setData] = useState([]);
+    
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -52,6 +53,7 @@ function Home() {
     };
 
     const handleSearch = () => {
+        console.log("Searching...");
         const filtered = data.filter(employee =>
             Object.values(employee).some(value =>
                 typeof value === 'string' && value.toLowerCase().includes(searchTerm.toLowerCase())
