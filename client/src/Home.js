@@ -31,13 +31,13 @@ function Home() {
 
     
     useEffect(()=>{
-        axios.get('http://localhost:8081/')
+        axios.get('https://emp-task-cvkq.onrender.com/')
         .then(res => setData(res.data))
         .catch(err => console.log(err));
 
 })
     const handleDelete=(Eid)=>{
-        axios.delete('http://localhost:8081/'+Eid)
+        axios.delete('https://emp-task-cvkq.onrender.com/'+Eid)
         .then(res => {navigate('/')})
         .catch(err => console.log(err));
     }
