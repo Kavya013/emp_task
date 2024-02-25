@@ -21,7 +21,7 @@ app.get('/',(req,res)=>{
     })
 })
 
-app.post('/Homenew', (req, res) => {
+app.post('/', (req, res) => {
     console.log("postdata");  
     console.log("req-post:", req.body);  
     const sql = "INSERT INTO Employee (Ename, Eid, Edept, Edob, Egender, Edesign, Esalary, Eaddress, Elocation, Epincode, Eexperience, Eage) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -46,10 +46,12 @@ app.post('/Homenew', (req, res) => {
     db.query(sql, values, (err, data) => {
         if (err) {
             console.log(err);
+            return res.status(500).json({ error: 'Failed to create employee' });
         }
         console.log("created");
+        res.status(200).json({ message: "Employee created successfully" });
     });
-    res.status(200).send({message:"created"}); 
+   
 });
 
   

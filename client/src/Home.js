@@ -31,13 +31,13 @@ function Home() {
 
     
     useEffect(()=>{
-        axios.get('https://emp-task-tm7l.onrender.com/')
+        axios.get('http://localhost:8081/')
         .then(res => setData(res.data))
         .catch(err => console.log(err));
 
 })
     const handleDelete=(Eid)=>{
-        axios.delete('https://emp-task-tm7l.onrender.com/'+Eid)
+        axios.delete('http://localhost:8081/'+Eid)
         .then(res => {navigate('/')})
         .catch(err => console.log(err));
     }
@@ -83,13 +83,13 @@ function Home() {
                         <div className="inputs">
                             <div className="name">Employee Gender</div>
                             <div className="radio-container"></div>
-                                    <input className="male" type="radio" name="Gender" value="Male" checked={Egender === "Male"} onClick={(e) => setEgender(e.target.value)} />
+                                    <input className="male" type="radio" name="Gender" value="Male" checked={Egender === "Male"} onChange={(e) => setEgender(e.target.value)} />
                                     <label className="Male-label">Male</label>
                                     
 
             
-                                    <input className="female" name="Gender" type='radio' value="Female" checked={Egender === "Female"} onClick={(e) => setEgender(e.target.value)} />
-                                         <label className="Female-label">Female</label>
+                                    <input className="female" name="Gender" type='radio' value="Female" checked={Egender === "Female"} onChange={(e) => setEgender(e.target.value)} />
+                                    <label className="Female-label">Female</label>
                         
                         </div>
 
@@ -119,59 +119,59 @@ function Home() {
                     <thead>
                         <tr>
                             <th>Emp_Name</th>
-                            <div></div>
+                            
                             <th>Emp_ID</th>
-                            <div></div>
+                            
                             <th>Emp_Department</th>
-                            <div></div>
+                            
                             <th>Emp_DOB</th>
-                            <div></div>
+                            
                             <th>Emp_Gender</th>
-                            <div></div>
+                            
                             <th>Emp_Designation</th>
-                            <div></div>
+                            
                             <th>Emp_Salary</th>
-                            <div></div>
+                            
                             <th>Emp_Address</th>
-                            <div></div>
+                            
                             <th>Emp_Location</th>
-                            <div></div>
+                            
                             <th>Emp_Pincode</th>
-                            <div></div>
+                            
                             <th>Emp_Experience</th>
-                            <div></div>
+                            
                             <th>Emp_Age</th>
-                            <div></div>
+                            
                             <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
                         {data.map( (d ,i) => (
-                            <tr>
+                            <tr key={i}>
                                 <td>{d.Ename}</td>
-                                <div></div>
+                               
                                 <td>{d.Eid}</td>
-                                <div></div>
+                              
                                 <td>{d.Edept}</td>
-                                <div></div>
+                               
                                 <td>{d.Edob}</td>
-                                <div></div>
+                                
                                 <td>{d.Egender}</td>
-                                <div></div>
+                                
                                 <td>{d.Edesign}</td>
-                                <div></div>
+                                
                                 <td>{d.Esalary}</td>
-                                <div></div>
+                                
                                 <td>{d.Eaddress}</td>
-                                <div></div>
+                                
                                 <td>{d.Elocation}</td>
-                                <div></div>
+                                
                                 <td>{d.Epincode}</td>
-                                <div></div>
+                               
                                 <td>{d.Eexperience}</td>
-                                <div></div>
+                                
                                 <td>{d.Eage}</td>
-                                <div></div>
+                                
                                 <td>
                                     <button onClick={e=>handleDelete(d.Eid)}>Delete</button>
                                 </td>

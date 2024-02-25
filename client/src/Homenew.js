@@ -19,7 +19,7 @@ const Homenew = () => {
         alert('Form Submitted Successfully');
         console.log(Eaddress,Elocation,Epincode,Eexperience,Eage,Ename,Eid,Edept,Edob,Egender,Edesign,Esalary);
         event.preventDefault();
-        axios.post('https://emp-task-tm7l.onrender.com/',{Ename,Eid,Edept,Edob,Egender,Edesign,Esalary,Eaddress,Elocation,Epincode,Eexperience,Eage})
+        axios.post('http://localhost:8081/',{Ename,Eid,Edept,Edob,Egender,Edesign,Esalary,Eaddress,Elocation,Epincode,Eexperience,Eage})
         .then(res =>{
             navigate('/');
         })
@@ -36,20 +36,20 @@ const Homenew = () => {
                         <h1>Enter Employee Details</h1>
                         <div className='inputs'>
                             <div className='name'>Employee_Address:</div>
-                            <div classname='inputs'>
+                            <div className='inputs'>
                                 <input type='text' placeholder='Address:' onChange={e => setEaddress(e.target.value)} required/>
                             </div>
                         </div>
                         <div className='inputs'>
                             <div className='name'>Employee_Location:</div>
-                            <div classname='inputs'>
+                            <div className='inputs'>
                                 <input type='text' placeholder='Location:' onChange={e => setElocation(e.target.value)} required/>
                             </div>
                         </div>
 
                         <div className='inputs'>
                             <div className='name'>Employee_Pincode:</div>
-                            <div classname='inputs'>
+                            <div className='inputs'>
                                 <input type='text' placeholder='Pincode:' onChange={e => setEpincode(e.target.value)} required/>
                             </div>
                         </div>
@@ -57,13 +57,13 @@ const Homenew = () => {
 
                         <div className='inputs'>
                             <div className='name'>Employee_Experience:</div>
-                            <div classname='inputs'>
+                            <div className='inputs'>
                                 <input type='text' placeholder='Experience :' onChange={e => setEexperience(e.target.value)} required/>
                             </div>
                         </div>
                         <div className='inputs'>
                             <div className='name'>Employee_Age:</div>
-                            <div classname='inputs'>
+                            <div className='inputs'>
                                 <input type='text' placeholder='Age:' onChange={e => setEage(e.target.value)} required/>
                             </div>
                         </div>
