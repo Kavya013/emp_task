@@ -11,11 +11,8 @@ function Home() {
     const [Egender, setEgender] = useState('');
     const [Edesign, setEdesign] = useState('');
     const [Esalary, setEsalary] = useState('');
-    const [searchTerm, setSearchTerm] = useState('');
-    const [filteredData, setFilteredData] = useState([]);
     const navigate = useNavigate();
     const [data, setData] = useState([]);
-    
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -52,15 +49,6 @@ function Home() {
             .catch(err => console.log(err));
     };
 
-    const handleSearch = () => {
-        console.log("Searching...");
-        const filtered = data.filter(employee =>
-            Object.values(employee).some(value =>
-                typeof value === 'string' && value.toLowerCase().includes(searchTerm.toLowerCase())
-            )
-        );
-        setFilteredData(filtered);
-    };
 
     return (
         <div>
