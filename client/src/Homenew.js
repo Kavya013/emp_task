@@ -25,22 +25,7 @@ const Homenew = () => {
             return;
         }
         // Proceed with form submission
-        axios.post('https://emp-task-cvkq.onrender.com/', {
-            // Include other form data here
-            Ename: Ename,
-            Eid: Eid,
-            Edept: Edept,
-            Edob: Edob,
-            Egender: Egender,
-            Edesign: Edesign,
-            Esalary: Esalary,
-            Eaddress: Eaddress,
-            Elocation: Elocation,
-            Epincode: Epincode,
-            Eexperience: Eexperience,
-            Eage: Eage
-           
-        })
+        axios.post('https://emp-task-cvkq.onrender.com/',{Ename,Eid,Edept,Edob,Egender,Edesign,Esalary,Eaddress,Elocation,Epincode,Eexperience,Eage})
         .then(res => {
             alert('Form Submitted Successfully');
             navigate('/');
