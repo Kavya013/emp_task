@@ -2,11 +2,13 @@
 import React from 'react';
 import axios from 'axios';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,useLocation } from 'react-router-dom';
 import './Style.css';
 
 const Homenew = () => {
     const navigate = useNavigate();
+    const {state} = useLocation();
+    const {Ename,Eid,Edept,Edob,Egender,Edesign,Esalary} = state;
     const [Eaddress, setEaddress] = useState('');
     const [Elocation, setElocation] = useState('');
     const [Epincode, setEpincode] = useState('');
