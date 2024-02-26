@@ -1,3 +1,4 @@
+// Home.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -22,6 +23,8 @@ function Home() {
             alert('Employee name should not exceed 20 characters');
         } else if (employeeDOB.getFullYear() > 2000) {
             alert('Employee should be born before the year 2000');
+        } else if (!['HR', 'Ceo', 'Branch Manager', 'Finance Manager', 'Developer', 'Tester'].includes(Edesign)) {
+            alert('Invalid Employee Designation. Please select from the provided options.');
         } else {
             navigate('/Homenew', {
                 state: {
@@ -49,7 +52,6 @@ function Home() {
             .catch(err => console.log(err));
     };
 
-
     return (
         <div>
             <div className='form-container'>
@@ -58,7 +60,6 @@ function Home() {
                     <div className='inputs'>
                         <div className='name'>Employee Name:</div>
                         <div className='inputs'>
-                            {/* Added maxLength attribute */}
                             <input type='text' value={Ename} maxLength={20} onChange={e => setEname(e.target.value)} required />
                         </div>
                     </div>
@@ -73,19 +74,18 @@ function Home() {
                         <div className='inputs'>
                             <select className='select-dropdown' value={Edept} onChange={e => setEdept(e.target.value)} required>
                                 <option value="">Select Department</option>
-                                <option value="HR">HR</option>
-                                <option value="Ceo">CEO</option>
-                                <option value="Branch Manager">Branch Manager</option>
-                                <option value="Finance Manager">Finance Manager</option>
-                                <option value="Developer">Developer</option>
-                                <option value="Tester">Tester</option>
+                                <option value="Technical">Technical</option>
+                                <option value="Non Technical">Non Technical</option>
+                                <option value="Sales">Sales</option>
+                                <option value="Accounts">Accounts</option>
+                                <option value="Finance">Finance</option>
+                                <option value="Customer support">Customer support</option>
                             </select>
                         </div>
                     </div>
                     <div className='inputs'>
                         <div className='name'>Employee DOB:</div>
                         <div className='inputs'>
-                            {/* Added max attribute */}
                             <input type='date' max="2000-01-01" value={Edob} onChange={e => setEdob(e.target.value)} required />
                         </div>
                     </div>
@@ -101,7 +101,15 @@ function Home() {
                     <div className='inputs'>
                         <div className='name'>Employee Designation:</div>
                         <div className='inputs'>
-                            <input type='text' value={Edesign} onChange={e => setEdesign(e.target.value)} required />
+                            <select value={Edesign} onChange={e => setEdesign(e.target.value)} required>
+                                <option value="">Select Designation</option>
+                                <option value="HR">HR</option>
+                                <option value="Ceo">CEO</option>
+                                <option value="Branch Manager">Branch Manager</option>
+                                <option value="Finance Manager">Finance Manager</option>
+                                <option value="Developer">Developer</option>
+                                <option value="Tester">Tester</option>
+                            </select>
                         </div>
                     </div>
                     <div className='inputs'>
@@ -166,3 +174,4 @@ function Home() {
 }
 
 export default Home;
+
